@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X</title>
+    <img itemprop="logo" title="Photo Name" src="logo/Photo.ico" width="150" height="120">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Galerie de Photos</h1>
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Rechercher une photo..." onkeyup="searchPhotos()">
+    </div>
+    <div class="button-container">
+        <button class="link-button" onclick="window.location.href='index.html'">Acceuil 🏠</button>
+        <button class="link-button" onclick="window.location.href='ph.html'">Actrices</button>
+        <button class="link-button" onclick="window.location.href='x.html'">X</button>
+        <button class="link-button" onclick="window.location.href='creatrices.html'">Amateur</button>
+        <button class="link-button" onclick="window.location.href='vidéo.html'">Vidéo</button>"
+        <!-- Ajoutez d'autres boutons ici -->
+    </div>
+    <div class="gallery">
+        <div class="photo-container">
+            <img src="x/julie la brtonne.jpg" alt="Description de la photo 1">
+            <p>Julie La Bretonne</p>
+            <a href="https://x.com/juju_labretonne">X 🐦</a>
+            <a href="https://x.com/juju_labretonne/media">Médias</a>
+        </div>
+        <div class="photo-container">
+            <img src="x/enyaa.jpg" alt="Description de la photo 1">
+            <p>Enyaa</p>
+            <a href="https://x.com/enyaaoff">X 🐦</a>
+            <a href="https://x.com/enyaaoff/media">Médias</a>
+        </div>
+        <div class="photo-container">
+            <img src="x/valentine b.jpg" alt="Description de la photo 1">
+            <p>Valentine B</p>
+            <a href="https://x.com/MrMrsB13">X 🐦</a>
+            <a href="https://x.com/MrMrsB13/media">Médias</a>
+        </div>
+        <div class="photo-container">
+            <img src="x/Qveenjulia.jpg" alt="Description de la photo 1">
+            <p>Qveenjulia</p>
+            <a href="https://x.com/qveenjulia">X 🐦</a>
+            <a href="https://x.com/qveenjulia/media">Médias</a>
+        </div>
+        <div class="photo-container">
+            <img src="x/sophie rain.jpg" alt="Description de la photo 1">
+            <p>Sophie Rain</p>
+            <a href="https://x.com/sophieraiin">X 🐦</a>
+            <a href="https://x.com/sophieraiin/media">Médias</a>
+        </div>
+        <div class="photo-container">
+            <img src="x/carla vyx.jpg" alt="Description de la photo 1">
+            <p>Carla Vyx</p>
+            <a href="https://x.com/carla_vyx">X 🐦</a>
+            <a href="https://x.com/carla_vyx/media">Médias</a>
+        </div>
+    </div>
+<!-- Ajoutez le script ici, avant la fermeture de la balise body -->
+<script>
+    function searchPhotos() {
+        // Récupère la valeur entrée dans la barre de recherche
+        const input = document.getElementById("searchInput").value.toLowerCase();
+        
+        // Récupère tous les conteneurs de photos
+        const photoContainers = document.querySelectorAll(".photo-container");
+        
+        // Parcourt chaque conteneur de photo
+        photoContainers.forEach(container => {
+            // Récupère le texte de l'élément <p> (nom ou description)
+            const text = container.querySelector("p").textContent.toLowerCase();
+            
+            // Vérifie si le texte correspond à l'entrée
+            if (text.includes(input)) {
+                // Affiche le conteneur si correspondance
+                container.style.display = "block";
+            } else {
+                // Cache le conteneur si aucune correspondance
+                container.style.display = "none";
+            }
+        });
+    }
+    </script>
+</body>
+</html>
